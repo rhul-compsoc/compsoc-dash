@@ -112,4 +112,4 @@ export const SearchBar = ({ currentPage }: { currentPage: string }): JSX.Element
       </div>
     </nav>
   );
-}
+};

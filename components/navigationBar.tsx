@@ -81,4 +81,4 @@ export const NavigationBar = ({ currentPage }: { currentPage: string }): JSX.Ele
       </div>
     </nav>
   );
-}
+};
