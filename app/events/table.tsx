@@ -1,12 +1,7 @@
-import { User } from "@/lib/types/user";
-
-interface Row {
-  id?: string;
-  name?: string;
-}
+import { Event } from "@/lib/types/event";
 
 interface Rows {
-  rows: User[];
+  rows: Event[];
 }
 
 export const Table: React.FC<Rows> = ({ rows }): JSX.Element => {
@@ -22,6 +17,18 @@ export const Table: React.FC<Rows> = ({ rows }): JSX.Element => {
               Name
             </th>
             <th scope="col" className="px-6 py-3">
+              Description
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Date & Time
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Attendance
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Members Only
+            </th>
+            <th scope="col" className="px-6 py-3">
               <button className="sr-only">Edit</button>
             </th>
           </tr>
@@ -34,6 +41,18 @@ export const Table: React.FC<Rows> = ({ rows }): JSX.Element => {
               </th>
               <td className="px-6 py-4">
                 {row.name}
+              </td>
+              <td className="px-6 py-4">
+                {row.description}
+              </td>
+              <td className="px-6 py-4">
+                {row.date.day}/{row.date.month}/{row.date.year} @ {row.time.hour}:{row.time.minute}
+              </td>
+              <td className="px-6 py-4">
+                {row.attendance}
+              </td>
+              <td className={`px-6 py-4 ${row.members_only ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+                {row.members_only ? "true" : "false"}
               </td>
               <td className="px-6 py-4 text-right">
                 <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>

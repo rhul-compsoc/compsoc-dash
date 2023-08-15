@@ -1,8 +1,8 @@
-import { User } from "../types/user";
+import { Event } from "../types/event";
 
-export async function listUsers(): Promise<User[]> {
+export async function listEvents(): Promise<Event[]> {
   const response = await fetch(
-    `http://localhost:8080/person`,
+    `http://localhost:8080/event`,
     {
       method: "GET",
     },
@@ -13,9 +13,9 @@ export async function listUsers(): Promise<User[]> {
   return response.json();
 }
 
-export async function getUser(id: number): Promise<User> {
+export async function getEvent(id: number): Promise<Event> {
   const response = await fetch(
-    `http://localhost:8080/person/${id}`,
+    `http://localhost:8080/event/${id}`,
     {
       method: "GET",
     },

@@ -2,8 +2,8 @@
 
 import { Footer } from "@/components/footer";
 import { SearchBar } from "@/components/searchBar";
-import { Table } from "@/components/table";
 import { listUsers } from "@/lib/api/users";
+import { Table } from "./table";
 import { useEffect, useState } from "react";
 
 export default function Page() {
@@ -33,6 +33,7 @@ export default function Page() {
         setContent(<p>Error fetching users</p>);
       }
     };
+
     fetchData();
   }, []);
 
