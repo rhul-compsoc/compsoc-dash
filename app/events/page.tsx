@@ -1,9 +1,9 @@
 'use client'
 
-import { Footer } from "@/components/footer";
-import { SearchBar } from "@/components/searchBar";
+import { Footer } from "@/components/navigation/footer";
+import { SearchBar } from "@/components/navigation/searchBar";
+import { Table } from "@/components/table/eventTable";
 import { listEvents } from "@/lib/api/events";
-import { Table } from "./table";
 import { useEffect, useState } from "react";
 
 export default function Page() {

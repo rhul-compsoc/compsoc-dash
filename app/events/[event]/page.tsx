@@ -1,5 +1,5 @@
-import { Footer } from "@/components/footer";
-import { SearchBar } from "@/components/searchBar";
+import { Footer } from "@/components/navigation/footer";
+import { SearchBar } from "@/components/navigation/searchBar";
 
 export default function EventPage() {
   return (
