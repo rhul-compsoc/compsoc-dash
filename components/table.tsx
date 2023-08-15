@@ -1,10 +1,12 @@
+import { User } from "@/lib/types/user";
+
 interface Row {
   id?: string;
   name?: string;
 }
 
 interface Rows {
-  rows: Row[];
+  rows: User[];
 }
 
 export const Table: React.FC<Rows> = ({ rows }): JSX.Element => {
