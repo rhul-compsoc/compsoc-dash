@@ -11,13 +11,25 @@ export const Footer = () => {
             <a href="#" className="mr-4 hover:underline md:mr-6 ">About</a>
           </li>
           <li>
-            <a href="#" className="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+            <a href="#" className="mr-4 hover:underline md:mr-6">Privacy</a>
           </li>
           <li>
-            <a href="#" className="mr-4 hover:underline md:mr-6">Licensing</a>
+            <a
+              href="https://github.com/rhul-compsoc/compsoc-dash"
+              target="_blank"
+              className="mr-4 hover:underline md:mr-6"
+            >
+              Source
+            </a>
           </li>
           <li>
-            <a href="#" className="hover:underline">Contact</a>
+            <a
+              href="https://github.com/rhul-compsoc"
+              target="_blank"
+              className="hover:underline"
+            >
+              Github
+            </a>
           </li>
         </ul>
       </div>

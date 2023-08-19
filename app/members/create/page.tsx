@@ -15,11 +15,11 @@ export default function Page() {
 
   return (
     <div>
-      {/* <CreateForm/> */}
+      <CreateForm/>
 
-      <EditForm
+      {/* <EditForm
         member={member}
-      />
+      /> */}
     </div>
   );
 }

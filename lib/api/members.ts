@@ -70,3 +70,16 @@ export async function putMember(member: Member): Promise<Response> {
 
   return response;
 }
+
+export async function deleteMember(id: number): Promise<Response> {
+  const response = await fetch(
+    `http://localhost:8080/member/${id}`,
+    {
+      method: "DELETE",
+    }
+  );
+
+  if (!response.ok) throw new Error("failed to fetch (put) to api");
+
+  return response;
+}
