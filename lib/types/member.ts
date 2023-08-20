@@ -1,5 +1,5 @@
 export type Member = {
-  id?: number;
+  id: number;
   student_id: string;
   student_email: string;
   first_name: string;
