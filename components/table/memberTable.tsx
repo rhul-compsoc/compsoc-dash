@@ -2,9 +2,12 @@ import { Member } from "@/lib/types/member";
 
 interface Rows {
   rows: Member[];
+  on_click: (id: number) => void;
 }
 
-export const Table: React.FC<Rows> = ({ rows }): JSX.Element => {
+export const Table: React.FC<Rows> = ({ rows, on_click }): JSX.Element => {
+  const sortedRows = rows.slice().sort((a, b) => a.id - b.id);
+
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -34,7 +37,7 @@ export const Table: React.FC<Rows> = ({ rows }): JSX.Element => {
           </tr>
         </thead>
         <tbody>
-          {rows && rows.map((row, index) => (
+          {sortedRows && sortedRows.map((row, index) => (
             <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
               <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 {row.id}
@@ -55,7 +58,12 @@ export const Table: React.FC<Rows> = ({ rows }): JSX.Element => {
                 {row.active_member ? "true" : "false"}
               </td>
               <td className="px-6 py-4 text-right">
-                <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                <button
+                  onClick={() => on_click(row.id)}
+                  className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                >
+                  Edit
+                </button>
               </td>
             </tr>
           ))}
