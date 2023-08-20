@@ -3,7 +3,7 @@ import { User } from "../types/user";
 
 export async function listUsers(): Promise<User[]> {
   const response = await fetch(
-    `http://localhost:8080/person`,
+    `http://localhost:8080/user`,
     {
       method: "GET",
     },
@@ -16,7 +16,7 @@ export async function listUsers(): Promise<User[]> {
 
 export async function getUser(id: number): Promise<User> {
   const response = await fetch(
-    `http://localhost:8080/person/${id}`,
+    `http://localhost:8080/user/${id}`,
     {
       method: "GET",
     },
@@ -29,7 +29,7 @@ export async function getUser(id: number): Promise<User> {
 
 export async function postUser(user: User): Promise<number> {
   const response = await fetch(
-    `http://localhost:8080/person`,
+    `http://localhost:8080/user`,
     {
       method: "POST",
       headers: {
