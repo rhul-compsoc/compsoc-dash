@@ -25,22 +25,26 @@ export default function Page() {
   useEffect(() => {
     const handleOpenEdit = async (id: number) => {
       setIsEditOpen(true);
+      document.body.classList.add('overflow-hidden');
       setCurrentMember(await getMember(id))
       console.log(isEditOpen, id)
     };
 
     const handleCloseEdit = () => {
       setIsEditOpen(false);
+      document.body.classList.remove('overflow-hidden');
       console.log(isEditOpen)
     };
 
     const handleOpenCreate = () => {
       setIsCreateOpen(true);
+      document.body.classList.add('overflow-hidden');
       console.log(isCreateOpen)
     };
 
     const handleCloseCreate = () => {
       setIsCreateOpen(false);
+      document.body.classList.remove('overflow-hidden');
       console.log(isCreateOpen)
     };
 
