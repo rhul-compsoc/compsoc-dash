@@ -2,7 +2,7 @@ import { Member } from "../types/member";
 
 export async function listMembers(): Promise<Member[]> {
   const response = await fetch(
-    `http://localhost:8080/member`,
+    `http://localhost:8080/api/v1/member`,
     {
       method: "GET",
     },
@@ -15,7 +15,7 @@ export async function listMembers(): Promise<Member[]> {
 
 export async function getMember(id: number): Promise<Member> {
   const response = await fetch(
-    `http://localhost:8080/member/${id}`,
+    `http://localhost:8080/api/v1/member/${id}`,
     {
       method: "GET",
     },
@@ -28,7 +28,7 @@ export async function getMember(id: number): Promise<Member> {
 
 export async function postMember(member: Member): Promise<Response> {
   const response = await fetch(
-    `http://localhost:8080/member`,
+    `http://localhost:8080/api/v1/member`,
     {
       method: "POST",
       body: JSON.stringify(member)
@@ -44,7 +44,7 @@ export async function patchMember(member: Member): Promise<Response> {
   console.log(JSON.stringify(member))
 
   const response = await fetch(
-    `http://localhost:8080/member`,
+    `http://localhost:8080/api/v1/member`,
     {
       method: "PATCH",
       body: JSON.stringify(member)
@@ -59,7 +59,7 @@ export async function patchMember(member: Member): Promise<Response> {
 export async function putMember(member: Member): Promise<Response> {
 
   const response = await fetch(
-    `http://localhost:8080/member`,
+    `http://localhost:8080/api/v1/member`,
     {
       method: "PUT",
       body: JSON.stringify(member)
@@ -73,7 +73,7 @@ export async function putMember(member: Member): Promise<Response> {
 
 export async function deleteMember(id: number): Promise<Response> {
   const response = await fetch(
-    `http://localhost:8080/member/${id}`,
+    `http://localhost:8080/api/v1/member/${id}`,
     {
       method: "DELETE",
     }

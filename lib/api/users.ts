@@ -1,9 +1,8 @@
-import { json } from "stream/consumers";
 import { User } from "../types/user";
 
 export async function listUsers(): Promise<User[]> {
   const response = await fetch(
-    `http://localhost:8080/user`,
+    `http://localhost:8080/api/v1/user`,
     {
       method: "GET",
     },
@@ -16,7 +15,7 @@ export async function listUsers(): Promise<User[]> {
 
 export async function getUser(id: number): Promise<User> {
   const response = await fetch(
-    `http://localhost:8080/user/${id}`,
+    `http://localhost:8080/api/v1/user/${id}`,
     {
       method: "GET",
     },
@@ -29,7 +28,7 @@ export async function getUser(id: number): Promise<User> {
 
 export async function postUser(user: User): Promise<number> {
   const response = await fetch(
-    `http://localhost:8080/user`,
+    `http://localhost:8080/api/v1/user`,
     {
       method: "POST",
       headers: {

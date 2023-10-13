@@ -2,7 +2,7 @@ import { Event } from "../types/event";
 
 export async function listEvents(): Promise<Event[]> {
   const response = await fetch(
-    `http://localhost:8080/event`,
+    `http://localhost:8080/api/v1/event`,
     {
       method: "GET",
     },
@@ -15,7 +15,7 @@ export async function listEvents(): Promise<Event[]> {
 
 export async function getEvent(id: number): Promise<Event> {
   const response = await fetch(
-    `http://localhost:8080/event/${id}`,
+    `http://localhost:8080/api/v1/event/${id}`,
     {
       method: "GET",
     },
@@ -28,7 +28,7 @@ export async function getEvent(id: number): Promise<Event> {
 
 export async function postEvent(event: Event): Promise<Response> {
   const response = await fetch(
-    `http://localhost:8080/event`,
+    `http://localhost:8080/api/v1/event`,
     {
       method: "POST",
       body: JSON.stringify(event)
@@ -42,7 +42,7 @@ export async function postEvent(event: Event): Promise<Response> {
 
 export async function putEvent(event: Event): Promise<Response> {
   const response = await fetch(
-    `http://localhost:8080/event`,
+    `http://localhost:8080/api/v1/event`,
     {
       method: "PUT",
       body: JSON.stringify(event)
@@ -56,7 +56,7 @@ export async function putEvent(event: Event): Promise<Response> {
 
 export async function patchEvent(event: Event): Promise<Response> {
   const response = await fetch(
-    `http://localhost:8080/event`,
+    `http://localhost:8080/api/v1/event`,
     {
       method: "PATCH",
       body: JSON.stringify(event)
@@ -70,7 +70,7 @@ export async function patchEvent(event: Event): Promise<Response> {
 
 export async function deleteEvent(id: number): Promise<Response> {
   const response = await fetch(
-    `http://localhost:8080/event/${id}`,
+    `http://localhost:8080/api/v1/event/${id}`,
     {
       method: "DELETE",
     }
